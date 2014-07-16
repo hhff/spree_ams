@@ -1,6 +1,7 @@
 module SpreeAms
   class Engine < Rails::Engine
-    require 'spree/core'
+    require 'spree_ams/controller_setup'
+
     isolate_namespace Spree
     engine_name 'spree_ams'
 

@@ -1,3 +1,8 @@
 Spree::Core::Engine.routes.draw do
-  # Add your extension routes here
+  namespace :api do
+    namespace :ams do
+      resources :products
+      resources :orders
+    end
+  end
 end
