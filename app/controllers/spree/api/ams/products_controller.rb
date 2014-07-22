@@ -2,7 +2,7 @@ module Spree
   module Api
     module Ams
       class ProductsController < Spree::Api::ProductsController
-        include Spree::Api::Ams::ControllerSetup
+        include ControllerSetup
 
         def index
           super
@@ -14,7 +14,7 @@ module Spree
           respond_with @product
         end
 
-        private
+        protected
 
         def object_serializer
           ProductSerializer

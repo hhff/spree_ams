@@ -3,10 +3,16 @@ module Spree
     module Ams
       module ControllerSetup
 
-        private
-
+        protected
         def respond_with(object=nil, rabl_template=nil, status=nil)
 
+          # Catch No Object
+          unless defined? object
+            render json: { error: 'No object passed into controllers respond_with call.' }, :status => 422
+            return
+          end
+
+          # Catch No Object Serializer
           unless defined? object_serializer
             render json: { error: 'No object serializer defined for this controller.' }, :status => 422
             return
@@ -17,7 +23,6 @@ module Spree
           else
             render json: object, serializer: object_serializer
           end
-
         end
 
       end
