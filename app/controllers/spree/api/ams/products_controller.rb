@@ -2,19 +2,9 @@ module Spree
   module Api
     module Ams
       class ProductsController < Spree::Api::ProductsController
-        include ControllerSetup
+        include Serializable
 
-        def index
-          super
-          respond_with @products
-        end
-
-        def show
-          super
-          respond_with @product
-        end
-
-        protected
+        private
 
         def object_serializer
           ProductSerializer

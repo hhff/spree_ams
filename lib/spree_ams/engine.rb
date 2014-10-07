@@ -1,11 +1,9 @@
 module SpreeAms
   class Engine < Rails::Engine
-    require 'spree_ams/controller_setup'
 
     isolate_namespace Spree
     engine_name 'spree_ams'
 
-    # use rspec for tests
     config.generators do |g|
       g.test_framework :rspec
     end

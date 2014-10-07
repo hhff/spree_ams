@@ -1,15 +1,14 @@
 module Spree
   module Api
     module Ams
-      class TaxonomiesController < Spree::Api::TaxonomiesController
+      class CheckoutsController < Spree::Api::CheckoutsController
         include Serializable
 
         private
 
         def object_serializer
-          TaxonomySerializer
+          OrderSerializer
         end
-
       end
     end
   end

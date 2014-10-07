@@ -19,6 +19,12 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
 
+# Require Pry
+require 'pry'
+
+# For Generating Docs
+require 'rspec_api_documentation'
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
@@ -79,4 +85,11 @@ RSpec.configure do |config|
   end
 
   config.fail_fast = ENV['FAIL_FAST'] || false
+
+  # Configure Docs
+  RspecApiDocumentation.configure do |config|
+    config.api_name = "SG API"
+    config.format   = :json
+    config.docs_dir = SpreeAms::Engine.root.join "docs/api", ""
+  end
 end
