@@ -5,7 +5,7 @@ module Spree
         extend ActiveSupport::Concern
 
         included do
-          before_filter :set_access_control_headers
+          prepend_before_filter :set_access_control_headers
         end
 
         private
@@ -13,7 +13,7 @@ module Spree
         def set_access_control_headers
           headers['Access-Control-Allow-Origin'] = 'http://localhost:4200'
           headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
-          headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
+          headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token, X-Spree-Token, X-Spree-Order-Token, X-Spree-Order-Id'
           headers['Access-Control-Max-Age'] = "1728000"
         end
 
@@ -39,7 +39,18 @@ module Spree
         end
 
         def guest_api_user
-          guest = User.new email: "guest@example.com"
+          User.new email: "guest@example.com"
+        end
+
+        # UMM
+
+        def order_id_from_header
+          request.headers['X-Spree-Order-Id']
+        end
+
+        def authorize_for_order
+          order_id = order_id_from_header unless order_id
+          super
         end
 
       end
