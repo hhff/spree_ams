@@ -43,7 +43,7 @@ Contributing
 Generate docs from the Acceptance Tests!
 
 ```ruby
-rake app:db:migrate
+rake app:docs:generate
 ```
 
 Copyright (c) 2014 Hugh Francis, released under the New BSD License
