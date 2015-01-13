@@ -1,15 +1,14 @@
 module Spree
   module Api
     module Ams
-      class OrdersController < Spree::Api::OrdersController
+      class LineItemsController < Spree::Api::LineItemsController
         include Serializable
 
         private
 
         def object_serializer
-          OrderSerializer
+          LineItemSerializer
         end
-
       end
     end
   end

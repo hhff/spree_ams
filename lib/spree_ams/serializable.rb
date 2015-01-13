@@ -17,7 +17,14 @@ module Spree
           headers['Access-Control-Max-Age'] = "1728000"
         end
 
-        def respond_with(object=nil, rabl_template=nil, status=nil)
+        def respond_with(object=nil, options={})
+
+          case options[:default_template]
+          when "spree/api/orders/could_not_transition"
+            render json: { error: "#{object.errors.messages.to_s}" }, :status => options[:status]
+            return
+          end
+
           unless defined? object
             render json: { error: 'No object passed into controllers respond_with call.' }, :status => 422
             return
@@ -27,30 +34,24 @@ module Spree
             return
           end
           if object.respond_to? :each
-            render json: object, each_serializer: object_serializer
+            render json: object#, each_serializer: object_serializer
           else
-            render json: object, serializer: object_serializer
+            render json: object#, serializer: object_serializer
           end
         end
 
+        # Override Base Controller
         def load_user
           super
           @current_api_user = guest_api_user if @current_api_user.nil?
         end
 
         def guest_api_user
-          User.new email: "guest@example.com"
+          User.new
         end
 
-        # UMM
-
-        def order_id_from_header
-          request.headers['X-Spree-Order-Id']
-        end
-
-        def authorize_for_order
-          order_id = order_id_from_header unless order_id
-          super
+        def order_id
+          params[:order_id] || params[:checkout_id] || params[:order_number] || request.headers['X-Spree-Order-Id']
         end
 
       end
