@@ -3,13 +3,7 @@ module Spree
     module Ams
       class TaxonomiesController < Spree::Api::TaxonomiesController
         include Serializable
-
-        private
-
-        def object_serializer
-          TaxonomySerializer
-        end
-
+        include Requestable
       end
     end
   end

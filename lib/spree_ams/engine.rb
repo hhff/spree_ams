@@ -1,6 +1,8 @@
 require 'spree_core'
 require 'spree_api'
+
 require 'spree_ams/serializable'
+require 'spree_ams/requestable'
 
 require 'active_model_serializers'
 require 'apitome'
@@ -10,7 +12,6 @@ module Spree
   module Api
     module Ams
       class Engine < Rails::Engine
-
 
         isolate_namespace Spree
         engine_name 'spree_ams'

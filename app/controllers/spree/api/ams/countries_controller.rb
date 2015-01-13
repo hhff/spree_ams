@@ -3,6 +3,7 @@ module Spree
     module Ams
       class CountriesController < Spree::Api::CountriesController
         include Serializable
+        include Requestable
 
         # We don't need this paginated.
         def index
@@ -10,11 +11,6 @@ module Spree
           respond_with @countries
         end
 
-        private
-
-        def object_serializer
-          CountrySerializer
-        end
       end
     end
   end

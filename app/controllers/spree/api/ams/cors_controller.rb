@@ -2,7 +2,7 @@ module Spree
   module Api
     module Ams
       class CorsController < Spree::Api::ProductsController
-        include Serializable
+        include Requestable
 
         def preflight_check
           headers['Access-Control-Allow-Origin'] = 'http://localhost:4200'

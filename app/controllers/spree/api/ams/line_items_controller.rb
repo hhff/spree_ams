@@ -3,12 +3,7 @@ module Spree
     module Ams
       class LineItemsController < Spree::Api::LineItemsController
         include Serializable
-
-        private
-
-        def object_serializer
-          LineItemSerializer
-        end
+        include Requestable
       end
     end
   end

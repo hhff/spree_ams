@@ -35,9 +35,6 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
 
-# Requires factories defined in lib/spree_ams/factories.rb
-require 'spree_ams/factories'
-
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
@@ -90,6 +87,6 @@ RSpec.configure do |config|
   RspecApiDocumentation.configure do |config|
     config.api_name = "SG API"
     config.format   = :json
-    config.docs_dir = SpreeAms::Engine.root.join "docs/api", ""
+    config.docs_dir = Spree::Api::Ams::Engine.root.join "docs/api", ""
   end
 end
