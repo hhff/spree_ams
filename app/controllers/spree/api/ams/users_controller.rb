@@ -3,10 +3,14 @@ module Spree
     module Ams
       class UsersController < Spree::Api::UsersController
         include Serializable
+        include Requestable
 
         def token
           if @user = Spree.user_class.find_for_database_authentication(login: user_params[:email])
             if @user.valid_password? user_params[:password]
+
+              @user.generate_spree_api_key! unless @user.spree_api_key
+
               render json: {
                 user_id:    @user.id,
                 user_email: @user.email,
@@ -30,12 +34,6 @@ module Spree
               }
             }, status: 422
           end
-        end
-
-        private
-
-        def object_serializer
-          UserSerializer
         end
       end
     end

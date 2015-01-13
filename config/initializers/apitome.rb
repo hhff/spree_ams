@@ -7,14 +7,14 @@ Apitome.setup do |config|
 
   # This defaults to Rails.root if left nil. If you're providing documentation for an engine using a dummy application
   # it can be useful to set this to your engines root.. E.g. Application::Engine.root
-  config.root = SpreeAms::Engine.root
+  config.root = Spree::Api::Ams::Engine.root
 
   # This is where rspec_api_documentation outputs the JSON files. This is configurable within RAD, and so is
   # configurable here.
   config.doc_path = 'docs/api'
 
   # The title of the documentation -- If your project has a name, you'll want to put it here.
-  config.title = 'Spree Ams Documentation'
+  config.title = 'Spree AMS Documentation'
 
   # The main layout view for all documentation pages. By default this is pretty basic, but you may want to use your own
   # application layout.

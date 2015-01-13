@@ -1,7 +1,13 @@
-SpreeAms
+Spree AMS
 ========
 
-Introduction goes here.
+[![Build Status](https://travis-ci.org/hhff/spree_ams.svg)](https://travis-ci.org/hhff/spree_ams)
+[![Dependency Status](https://gemnasium.com/hhff/spree_ams.svg)](https://gemnasium.com/hhff/spree_ams)
+
+Spree AMS is a module namspaced under Spree's Api module, providing a Spree Application with a collection of routes that behave identically to the regular api routes, but instead respond with serialized models (via the [Active Model Serializers](https://github.com/rails-api/active_model_serializers) gem).
+
+This gem does modify Spree's existing API - it can be used alongside this gem.
+
 
 Installation
 ------------
@@ -12,12 +18,8 @@ Add spree_ams to your Gemfile:
 gem 'spree_ams'
 ```
 
-Bundle your dependencies and run the installation generator:
+Then run ```bundle``` and you're good to go!
 
-```shell
-bundle
-bundle exec rails g spree_ams:install
-```
 
 Testing
 -------
@@ -29,11 +31,13 @@ bundle
 bundle exec rake
 ```
 
-When testing your applications integration with this extension you may use it's factories.
-Simply add this require statement to your spec_helper:
+Contributing
+------------
+
+Generate docs from the Acceptance Tests (you'll need to generate your dummy test_app first)!
 
 ```ruby
-require 'spree_ams/factories'
+rake app:docs:generate
 ```
 
-Copyright (c) 2014 [name of extension creator], released under the New BSD License
+Copyright (c) 2014 Hugh Francis, released under the New BSD License

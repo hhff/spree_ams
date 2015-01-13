@@ -3,13 +3,7 @@ module Spree
     module Ams
       class ProductsController < Spree::Api::ProductsController
         include Serializable
-
-        private
-
-        def object_serializer
-          ProductSerializer
-        end
-
+        include Requestable
       end
     end
   end

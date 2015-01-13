@@ -1,7 +1,1 @@
-require 'spree_core'
-require 'spree_api'
-require 'active_model_serializers'
-require 'spree_ams/serializable'
 require 'spree_ams/engine'
-require 'apitome'
-require 'rspec_api_documentation'
