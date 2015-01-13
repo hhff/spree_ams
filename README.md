@@ -1,6 +1,8 @@
 Spree AMS
 ========
 
+[![Build Status](https://travis-ci.org/hhff/spree_ams.svg)](https://travis-ci.org/hhff/spree_ams)
+
 Spree AMS is a module namspaced under Spree's Api module, providing a Spree Application with a collection of routes that behave identically to the regular api routes, but instead respond with serialized models (via the [Active Model Serializers](https://github.com/rails-api/active_model_serializers) gem).
 
 This gem does modify Spree's existing API - it can be used alongside this gem.
