@@ -20,7 +20,7 @@ task :test_app do
   Rake::Task['extension:test_app'].invoke
 end
 
-if Dir.exists?('./spec/dummy')
+unless Dir["spec/dummy"].empty?
   APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
   load 'rails/tasks/engine.rake'
 end
