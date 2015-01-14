@@ -8,5 +8,4 @@ http://emberjs.com/api/data/classes/DS.ActiveModelSerializer.html#method_extract
 Testing
 - Concerns
 - New Controller Methods
-
-Config
+- Full Acceptance Tests
