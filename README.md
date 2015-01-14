@@ -6,16 +6,22 @@ Spree AMS
 
 Spree AMS is a module namspaced under Spree's Api module, providing a Spree Application with a collection of routes that behave identically to the regular api routes, but instead respond with serialized models (via the [Active Model Serializers](https://github.com/rails-api/active_model_serializers) gem).
 
-This gem does modify Spree's existing API - it can be used alongside this gem.
+This gem does not modify Spree's existing API - it can be used alongside this gem.
 
 
 Installation
 ------------
 
-Add spree_ams to your Gemfile:
+Add spree_ams to your Spree store's Gemfile:
 
 ```ruby
-gem 'spree_ams'
+gem 'spree_ams', :github => 'hhff/spree_ams', :branch => '2-3-alpha'
+```
+
+Install the Initializer:
+
+```ruby
+rails g spree:api:ams:install
 ```
 
 Then run ```bundle``` and you're good to go!
