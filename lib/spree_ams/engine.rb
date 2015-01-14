@@ -1,13 +1,3 @@
-require 'spree_core'
-require 'spree_api'
-
-require 'spree_ams/serializable'
-require 'spree_ams/requestable'
-
-require 'active_model_serializers'
-require 'apitome'
-require 'rspec_api_documentation'
-
 module Spree
   module Api
     module Ams

@@ -12,10 +12,16 @@ This gem does not modify Spree's existing API - it can be used alongside this ge
 Installation
 ------------
 
-Add spree_ams to your Gemfile:
+Add spree_ams to your Spree store's Gemfile:
 
 ```ruby
 gem 'spree_ams'
+```
+
+Install the Initializer:
+
+```ruby
+rails g spree:api:ams:install
 ```
 
 Then run ```bundle``` and you're good to go!
