@@ -3,6 +3,14 @@ module Spree
     module Ams
       module Serializable
 
+        def meta_for(object)
+          meta = {}
+          if object.respond_to?("total_pages")
+            meta[:total_pages] = object.total_pages
+          end
+          meta
+        end
+
         def respond_with(object=nil, options={})
 
           case options[:default_template]
@@ -16,7 +24,7 @@ module Spree
             return
           end
 
-          render json: object
+          render json: object, meta: meta_for(object)
         end
 
       end

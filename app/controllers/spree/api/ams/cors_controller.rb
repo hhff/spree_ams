@@ -1,7 +1,7 @@
 module Spree
   module Api
     module Ams
-      class CorsController < Spree::Api::ProductsController
+      class CorsController < Spree::Api::BaseController
         include Requestable
 
         def preflight_check
