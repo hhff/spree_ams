@@ -17,15 +17,24 @@ module Spree
                 :large_url
 
     def small_url
-      object.attachment.url(:small)
+      process_url object.attachment.url(:small)
     end
 
     def product_url
-      object.attachment.url(:product)
+      process_url object.attachment.url(:product)
     end
 
     def large_url
-      object.attachment.url(:large)
+      process_url object.attachment.url(:large)
     end
+
+    def process_url(base_url)
+      if ENV['RAILS_ENV'] == "production"
+        base_url
+      else
+        URI.join(ActionController::Base.asset_host, base_url).to_s
+      end
+    end
+
   end
 end
