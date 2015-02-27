@@ -10,7 +10,7 @@ module Spree
                 :total,
                 :insufficient_stock?
 
-    has_one :variant, serializer: VariantSerializer
-    has_one :order, serializer: OrderSerializer
+    has_one :variant
+    has_one :order, embed_key: :number
   end
 end

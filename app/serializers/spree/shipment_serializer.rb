@@ -8,9 +8,10 @@ module Spree
                 :cost,
                 :shipped_at,
                 :state,
-                :order_id
+                :selected_shipping_rate_id
 
-    has_one :stock_location, serializer: StockLocationSerializer
-    has_many :shipping_rates, serializer: ShippingRateSerializer
+    has_one :stock_location
+    has_many :shipping_rates
+    has_many :line_items
   end
 end
