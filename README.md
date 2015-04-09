@@ -15,7 +15,7 @@ Installation
 Add spree_ams to your Spree store's Gemfile:
 
 ```ruby
-gem 'spree_ams', :github => 'hhff/spree_ams', :branch => '2-3-alpha'
+gem 'spree_ams', :github => 'hhff/spree_ams', :branch => '2-4-alpha'
 ```
 
 Install the Initializer:
