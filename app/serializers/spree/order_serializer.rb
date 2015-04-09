@@ -39,12 +39,12 @@ module Spree
       object.number
     end
 
-    has_many :shipments, serializer: ShipmentSerializer
+    has_many :shipments
     has_many :available_payment_methods, serializer: PaymentMethodSerializer, root: :payment_methods
     has_many :payments
-    has_many :line_items, serializer: LineItemSerializer
-    has_one :bill_address, serializer: AddressSerializer, root: :addresses
-    has_one :ship_address, serializer: AddressSerializer, root: :addresses
+    has_many :line_items
+    has_one :bill_address, root: :addresses
+    has_one :ship_address, root: :addresses
 
     # has_one :user
   end
