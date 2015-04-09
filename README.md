@@ -18,7 +18,18 @@ Add spree_ams to your Spree store's Gemfile:
 gem 'spree_ams', :github => 'hhff/spree_ams', :branch => '2-4-alpha'
 ```
 
+Spree uses Paperclip, which works in the model scope, and therefore knows nothing about your hostname. 
+
+If you'd like the Image Serializer to output absolute URLs (requisite for Spree Ember), you'll need to set a config.action_controller.asset_host in your Rails environment configuration.
+
+i.e. for your `development` environment in `config/environments/development.rb` set
+
+```
+config.action_controller.asset_host = 'http://localhost:3000'
+```
+
 Install the Initializer:
+
 
 ```ruby
 rails g spree:api:ams:install
