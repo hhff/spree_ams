@@ -16,6 +16,10 @@ module Spree
                 :product_url,
                 :large_url
 
+    def mini_url
+      process_url object.attachment.url(:mini)
+    end
+
     def small_url
       process_url object.attachment.url(:small)
     end
@@ -29,12 +33,11 @@ module Spree
     end
 
     def process_url(base_url)
-      if ENV['RAILS_ENV'] == "production"
-        base_url
-      else
+      if URI.parse(base_url).host.nil? && ActionController::Base.asset_host.present?
         URI.join(ActionController::Base.asset_host, base_url).to_s
+      else
+        base_url
       end
     end
-
   end
 end
