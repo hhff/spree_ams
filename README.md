@@ -15,7 +15,7 @@ Installation
 Add spree_ams to your Spree store's Gemfile:
 
 ```ruby
-gem 'spree_ams', :github => 'hhff/spree_ams', :branch => '2-4-alpha'
+gem 'spree_ams', :github => 'hhff/spree_ams', :branch => '3-0-alpha'
 ```
 
 Spree uses Paperclip, which works in the model scope, and therefore knows nothing about your hostname. 
