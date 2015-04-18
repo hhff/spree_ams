@@ -12,9 +12,9 @@ module Spree
               @user.generate_spree_api_key! unless @user.spree_api_key
 
               render json: {
-                user_id:    @user.id,
-                user_email: @user.email,
-                user_token: @user.spree_api_key
+                id:    @user.id,
+                email: @user.email,
+                token: @user.spree_api_key
               }
             else
               # Wrong Password
