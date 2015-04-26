@@ -7,6 +7,7 @@ Spree::Core::Engine.routes.draw do
       resources :line_items
       resources :orders
       resources :taxonomies
+      resources :taxons
       resources :countries, :only => [:index, :show]
 
       # Order Routes Concern?
