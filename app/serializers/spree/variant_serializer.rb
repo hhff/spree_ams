@@ -1,7 +1,5 @@
 module Spree
-  class VariantSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class VariantSerializer < BaseSerializer
     attributes  :id,
                 :name,
                 :sku,

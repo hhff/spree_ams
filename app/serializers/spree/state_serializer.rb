@@ -1,12 +1,10 @@
 module Spree
-  class StateSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class StateSerializer < BaseSerializer
     attributes  :id,
                 :name,
                 :abbr
 
     has_one :country, include: false
-
+  
   end
 end

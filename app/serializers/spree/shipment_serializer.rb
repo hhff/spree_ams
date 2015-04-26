@@ -1,7 +1,5 @@
 module Spree
-  class ShipmentSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class ShipmentSerializer < BaseSerializer 
     attributes  :id,
                 :tracking,
                 :number,

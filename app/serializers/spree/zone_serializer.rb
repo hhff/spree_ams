@@ -1,10 +1,7 @@
 module Spree
-  class ZoneSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class ZoneSerializer < BaseSerializer
     attributes  :id,
                 :name,
                 :description
-
   end
 end

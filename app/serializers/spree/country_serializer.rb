@@ -1,7 +1,8 @@
 module Spree
-  class CountrySerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class CountrySerializer < BaseSerializer
+    cache_single
+    cache_many
+    
     attributes  :id,
                 :iso_name,
                 :iso,
@@ -11,5 +12,6 @@ module Spree
                 :states_required
 
     has_many :states, serializer: StateSerializer
+
   end
 end

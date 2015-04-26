@@ -1,7 +1,5 @@
 module Spree
-  class PaymentSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class PaymentSerializer < BaseSerializer 
     attributes :id
 
     has_one :payment_method, serializer: PaymentMethodSerializer, root: :payment_methods

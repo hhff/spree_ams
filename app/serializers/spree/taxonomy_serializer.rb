@@ -1,6 +1,5 @@
 module Spree
-  class TaxonomySerializer < ActiveModel::Serializer
-    embed :ids, include: true
+  class TaxonomySerializer < BaseSerializer
     attributes :id,
                :name,
                :permalink,

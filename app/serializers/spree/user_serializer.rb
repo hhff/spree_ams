@@ -1,7 +1,5 @@
 module Spree
-  class UserSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class UserSerializer < BaseSerializer
     attributes  :id,
                 :email,
                 :remember_token,
@@ -21,6 +19,5 @@ module Spree
                 :updated_at,
                 :spree_api_key,
                 :remember_created_at
-
   end
 end

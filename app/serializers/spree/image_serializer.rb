@@ -1,5 +1,5 @@
 module Spree
-  class ImageSerializer < ActiveModel::Serializer
+  class ImageSerializer < BaseSerializer 
     attributes  :id,
                 :position,
                 :attachment_content_type,

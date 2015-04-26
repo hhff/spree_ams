@@ -1,7 +1,5 @@
 module Spree
-  class TaxonSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class TaxonSerializer < BaseSerializer
     attributes :id,
                :name,
                :pretty_name,

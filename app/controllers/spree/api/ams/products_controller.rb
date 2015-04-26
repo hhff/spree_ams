@@ -5,7 +5,6 @@ module Spree
         include Serializable
         include Requestable
 
-
         def product_scope
           scope = super
           if params[:taxon_id]

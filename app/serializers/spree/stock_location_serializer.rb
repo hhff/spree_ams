@@ -1,7 +1,5 @@
 module Spree
-  class StockLocationSerializer < ActiveModel::Serializer
-    embed :ids, include: true
-
+  class StockLocationSerializer < BaseSerializer
     attributes  :id,
                 :name
 
