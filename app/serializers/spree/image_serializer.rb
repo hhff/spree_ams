@@ -33,8 +33,15 @@ module Spree
     end
 
     def process_url(base_url)
-      if URI.parse(base_url).host.nil? && ActionController::Base.asset_host.present?
-        URI.join(ActionController::Base.asset_host, base_url).to_s
+      if URI.parse(base_url).host.nil?
+        if ActionController::Base.asset_host.present?
+          host = ActionController::Base.asset_host
+        else
+          url  = self.options[:url_options]
+          host = url[:protocol] + url[:host]
+          host += ":#{url[:port]}" if url[:port]
+        end
+        URI.join(host, base_url).to_s
       else
         base_url
       end
