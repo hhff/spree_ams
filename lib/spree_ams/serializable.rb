@@ -12,14 +12,8 @@ module Spree
         end
 
         def respond_with(object=nil, options={})
-          case options[:default_template]
-          when "spree/api/orders/could_not_transition"
-            render json: { error: "#{object.errors.messages.to_s}" }, :status => options[:status]
-            return
-          end
-
-          unless defined? object
-            render json: { error: 'No object passed into controllers respond_with call.' }, :status => 422
+          if object.try(:errors).present?
+            render json: { errors: object.errors.to_hash }, status: options[:status]
             return
           end
 
