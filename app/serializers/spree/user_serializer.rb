@@ -22,5 +22,10 @@ module Spree
                 :spree_api_key,
                 :remember_created_at
 
+    attribute :order_ids
+
+    def order_ids
+      object.orders.map{ |o| o.number }
+    end
   end
 end
