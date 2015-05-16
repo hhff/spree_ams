@@ -5,11 +5,7 @@ Spree::Core::Engine.routes.draw do
 
       resources :products
       resources :line_items
-      resources :orders, except: :index do
-        collection do
-          get '/', to: 'orders#mine'
-        end
-      end
+      resources :orders
       resources :taxonomies
       resources :taxons
       resources :countries, :only => [:index, :show]
