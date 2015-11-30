@@ -21,7 +21,7 @@ module Spree
         # current api user loaded.
         def load_user
           super
-          @current_api_user = User.new if @current_api_user.nil?
+          @current_api_user = Spree.user_class.new if @current_api_user.nil?
         end
 
         # Allow the current order to be be
