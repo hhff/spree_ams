@@ -1,7 +1,7 @@
 module Spree
   module Api
     module Ams
-      class OrdersController < Spree::Api::OrdersController
+      class OrdersController < Spree::Api::V1::OrdersController
         include Serializable
         include Requestable
 
