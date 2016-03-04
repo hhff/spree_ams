@@ -7,7 +7,8 @@ module Spree
 
         # We don't need this paginated.
         def index
-          @countries = Country.accessible_by(current_ability, :read).order('name ASC')
+          @countries = Country.accessible_by(current_ability, :read)
+                              .includes(:states).order(:name)
           respond_with @countries
         end
 
