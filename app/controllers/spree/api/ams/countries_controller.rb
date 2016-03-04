@@ -9,6 +9,12 @@ module Spree
         def index
           @countries = Country.accessible_by(current_ability, :read)
                               .includes(:states).order(:name)
+
+          isos = params[:isos]
+          isos = isos.split ',' if isos.is_a?(String)
+
+          @countries = @countries.where(iso: isos) if isos.present?
+
           respond_with @countries
         end
 
