@@ -4,9 +4,8 @@ module Spree
 
     attributes  :id,
                 :name,
-                :abbr
-
-    has_one :country, include: false
+                :abbr,
+                :country_id
 
   end
 end
