@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_ams'
-  s.version     = '3.0.0'
+  s.version     = '3.1.0'
   s.summary     = 'Use Active Model Serializers with Spree.'
   s.description = 'This gem allows Spree to respond as per the Active Model Serializers gem, while keeping the original api intact.'
   s.required_ruby_version = '>= 1.9.3'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 3.0.0'
+  s.add_dependency 'spree_core', '~> 3.1.0'
   s.add_dependency 'spree_api'
   s.add_dependency 'active_model_serializers', '~> 0.8.2'
   s.add_dependency 'apitome'
