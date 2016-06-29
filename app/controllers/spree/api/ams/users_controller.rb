@@ -1,7 +1,7 @@
 module Spree
   module Api
     module Ams
-      class UsersController < Spree::Api::UsersController
+      class UsersController < Spree::Api::V1::UsersController
         include Serializable
         include Requestable
 

@@ -1,7 +1,7 @@
 module Spree
   module Api
     module Ams
-      class CheckoutsController < Spree::Api::CheckoutsController
+      class CheckoutsController < Spree::Api::V1::CheckoutsController
         include Serializable
         include Requestable
 
