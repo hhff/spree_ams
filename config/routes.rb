@@ -3,9 +3,12 @@ Spree::Core::Engine.routes.draw do
     namespace :ams do
       match '*path' => 'cors#preflight_check', via: [:options]
 
+      resources :accounts
       resources :products
+      resources :account_viewable_variants
       resources :line_items
       resources :orders
+      resources :shipments
       resources :taxonomies
       resources :taxons
       resources :countries, :only => [:index, :show]
